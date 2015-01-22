@@ -31,17 +31,17 @@ module.exports = function (emitter) {
   //   writeError(msg);
   // };
   
-  emitter.on('request', function (data) {
+  emitter.on('response', function (data) {
     
     requests.push(data);
   });
   
-  emitter.on('request:success', function (response) {
+  emitter.on('response:success', function (response) {
     
     successes.push(response);
   });
   
-  emitter.on('request:error', function (err) {
+  emitter.on('response:error', function (err) {
     
     errors.push(err);
   });

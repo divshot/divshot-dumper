@@ -12,9 +12,9 @@ npm install divshot-dumper --save
 
 Divshot dumper listens for 3 events:
 
-* `request` - This is what actually gets logged to the file.
-* `request:success` - Status codes less than 400
-* `request:error` - This even will trigger writing to the debug file
+* `response` - This is what actually gets logged to the file.
+* `response:success` - Status codes less than 400
+* `response:error` - This even will trigger writing to the debug file
 
 All dumps are written to the file `divshot-debug.log`.
 
@@ -26,9 +26,9 @@ var emitter = new EventEmitter();
 
 dumper(emitter);
 
-emitter.emit('request', {});
-emitter.emit('request:success', {});
-emitter.emit('request:error', {});
+emitter.emit('response', {});
+emitter.emit('response:success', {});
+emitter.emit('response:error', {});
 ```
 
 ## Run Tests
