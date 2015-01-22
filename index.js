@@ -79,6 +79,7 @@ module.exports = function (emitter) {
     });
     
     // Write errors to debug log file
-    fs.outputFileSync(OUTPUT_FILE, output);
+    fs.ensureFileSync(OUTPUT_FILE);
+    fs.appendFileSync(OUTPUT_FILE, output);
   });
 };
